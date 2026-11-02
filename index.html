@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spesial Untuk Syafiqah Durratul Hikmah 💕</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Sacramento&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ffb6c1, #ffc0cb, #ffe4e1);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Efek Hati Berjatuhan di Background */
+        .heart-bg {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 20px;
+            animation: fall linear infinite;
+            z-index: 1;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-10vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Card Utama */
+        .card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 40px 30px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(219, 112, 147, 0.3);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            z-index: 2;
+            border: 2px solid #ffb6c1;
+            animation: popUp 1.2s ease-in-out;
+        }
+
+        @keyframes popUp {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .card h1 {
+            font-family: 'Sacramento', cursive;
+            font-size: 45px;
+            color: #d81b60;
+            margin-bottom: 10px;
+        }
+
+        .card h2 {
+            font-size: 18px;
+            color: #ad1457;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #6d4c41;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        /* Tombol Interaktif */
+        .btn {
+            background: linear-gradient(45deg, #ff69b4, #ff1493);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 15px;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 20, 147, 0.4);
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 20, 147, 0.6);
+        }
+
+        /* Pesan Rahasia yang Muncul */
+        #hidden-message {
+            display: none;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #c2185b;
+            font-weight: 600;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Animasi Hati -->
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart-bg');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 3 + 's';
+            heart.style.fontSize = Math.random() * 15 + 15 + 'px';
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
+        }
+        setInterval(createHeart, 300);
+    </script>
+
+    <!-- Kartu Ucapan -->
+    <div class="card">
+        <h1>Hello, My Love</h1>
+        <h2>Syafiqah Durratul Hikmah</h2>
+        <p>
+            Terima kasih sudah selalu ada dan mewarnai hari-hariku dengan senyumanmu. 
+            Semoga harimu selalu menyenangkan dan bahagia terus ya, kesayanganku! ✨💖
+        </p>
+        <button class="btn" onclick="showMessage()">Klik untuk Pesan Spesial</button>
+        <div id="hidden-message">
+            "Kamu adalah hal terindah yang pernah kumiliki. I love you so much! 🥰"
+        </div>
+    </div>
+
+    <script>
+        function showMessage() {
+            const msg = document.getElementById('hidden-message');
+            msg.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
